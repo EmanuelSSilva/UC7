@@ -1,0 +1,55 @@
+# Arquivo .gitignore para projeto web
+
+# Dependências
+node_modules/
+
+# Build / saída
+dist/
+build/
+.next/
+.nuxt/
+.vercel/
+.out/
+.output/
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Caches
+.cache/
+.parcel-cache/
+.sass-cache/
+coverage/
+
+# IDEs / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Chaves e certificados
+*.pem
+*.key
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+
+# Imagens ou arquivos grandes que não precisam estar no repo (ajuste conforme necessário)
+# img/
+
+# Fim
