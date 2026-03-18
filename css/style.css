@@ -57,6 +57,17 @@ nav ul{
   gap:20px;
   list-style:none;
   margin:0;padding:0;
+  justify-content: center;
+}
+
+/* removido o bloco de caixa do nav: deixa o nav transparente sobre o header */
+header nav{
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  backdrop-filter: none;
 }
 
 nav a{
@@ -70,7 +81,9 @@ nav a{
 
 nav a:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
 
-main{padding:32px 0}
+main{padding:25px;
+  margin:20px;
+}
 
 section{
   margin-bottom:36px;
