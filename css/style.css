@@ -48,7 +48,10 @@ header .container{
   gap:20px;
 }
 
-.brand img{width:px;height:80px;object-fit:contain;border-radius:10px;background:var(--glass);padding:6px}
+.brand img{width:80px;height:80px;object-fit:contain;border-radius:10px;background:var(--glass);padding:6px}
+
+/* imagens responsivas */
+img{max-width:100%;height:auto;display:block}
 
 .brand h1{font-size:20px;margin:0;letter-spacing:0.3px}
 
@@ -179,11 +182,17 @@ footer p{margin:0;text-align:center}
 @media (max-width:900px){
   .form-grid{grid-template-columns:1fr}
   header .container{flex-direction:column;align-items:flex-start}
-  nav ul{flex-wrap:wrap}
+  /* nav ocupa toda a largura e os links ficam alinhados à esquerda */
+  header nav{width:100%;margin-top:12px}
+  nav ul{flex-wrap:wrap;justify-content:flex-start}
+  nav a{padding:8px 10px}
 }
 
 @media (max-width:480px){
   .brand h1{font-size:18px}
   .container{padding:18px}
   .brand img{width:70px;height:70px}
+  /* em telas muito pequenas, empilha links do nav em coluna para melhor toque */
+  nav ul{flex-direction:column;gap:8px}
+  nav a{display:block;width:100%;padding:10px;border-radius:6px}
 }
