@@ -168,6 +168,35 @@ input:focus,select:focus,textarea:focus{
   transform:translateY(-1px);
 }
 
+/* Validação visual de formulários
+   Onde: estilos aplicados a inputs, textarea e selects inválidos/validados
+   O que faz: quando um campo obrigatório não estiver preenchido ou não passar no pattern,
+   aplicamos borda e sombra vermelhas. Campos válidos recebem borda verde suave.
+*/
+input:required:invalid,
+textarea:required:invalid,
+select:required:invalid,
+input:invalid,
+textarea:invalid,
+select:invalid{
+  border-color: #ef4444; /* vermelho */
+  box-shadow: 0 6px 18px rgba(239,68,68,0.08);
+  background: linear-gradient(180deg,#fff,#fff);
+}
+
+/* foco em campo inválido (mais evidente) */
+input:focus:invalid, textarea:focus:invalid, select:focus:invalid{
+  outline:none;
+  box-shadow: 0 10px 30px rgba(239,68,68,0.12);
+  transform: translateY(-1px);
+}
+
+/* campos válidos recebem destaque em verde */
+input:valid, textarea:valid, select:valid{
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(46,204,113,0.08);
+}
+
 textarea{min-height:120px;resize:vertical}
 
 .smallnote{font-size:12px;color:var(--muted);margin-top:6px}
