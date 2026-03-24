@@ -79,6 +79,10 @@ header nav{
   backdrop-filter: none;
 }
 
+/* NAV - estilos de links no cabeçalho
+   Onde: bloco responsável pelos links do menu (header > nav)
+   O que faz: cor padrão, cor após visita e efeito visual ao passar o mouse (hover)
+*/
 nav a{
   color: rgba(243,237,237,0.95);
   text-decoration:none;
@@ -88,10 +92,12 @@ nav a{
   transition:background .18s, transform .12s;
 }
 
+/* cor aplicada a links já visitados (apenas visual) */
 nav a:visited{
-  color: #7c3aed;
+  color: #7c3aed; /* roxo */
 }
 
+/* hover: destaca o link quando o mouse passa por cima */
 nav a:hover{
   color: #ffffff;
   background: rgba(255,255,255,0.08);
@@ -168,34 +174,64 @@ textarea{min-height:120px;resize:vertical}
 
 .actions{display:flex;gap:12px;align-items:center;margin-top:14px}
 
+/* BOTÕES - estilos globais e interações
+   Onde: regras para <button> e classes .btn-primary / .btn-secondary
+   O que faz: define aparência base e efeitos on-hover/active
+*/
 button{
   cursor:pointer;
   padding:10px 16px;
   border-radius:10px;
   border:0;
   font-weight:700;
-  transition:transform .12s, box-shadow .12s;
+  transition:transform .12s, box-shadow .12s, background .12s;
 }
 
+/* efeito ao pressionar */
 button:active{transform:translateY(1px)}
 
+/* efeito visual quando o mouse está sobre o botão */
+button:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 10px 30px rgba(10,13,30,0.12)}
+
+/* botão principal */
 .btn-primary{background:var(--primary);color:white;box-shadow:0 8px 30px rgba(10,61,98,0.12)}
+/* cor alternativa no hover para .btn-primary */
+.btn-primary:hover{background: #08304a}
+
+/* botão secundário */
 .btn-secondary{background:transparent;border:1px solid rgba(10,13,30,0.06);color:var(--primary)}
 
 .help-row{display:flex;gap:12px;align-items:center}
 
+/* RODAPÉ (footer) - destaque ao passar o mouse
+   Onde: footer e seu parágrafo interno
+   O que faz: aumenta o padding do footer e o tamanho do texto para chamar atenção
+*/
 footer{
   background:#0f1724;
   color:rgba(255,255,255,0.85);
   padding:22px 0;
+  transition:transform .12s, padding .12s;
 }
 
-footer p{margin:0;text-align:center}
+/* ao passar o mouse sobre o rodapé */
+footer:hover{padding:30px 0}
 
-/* seleção (texto marcado) - cor roxa */
+footer p{
+  margin:0;
+  text-align:center;
+  transition:font-size .12s;
+}
+
+footer:hover p{font-size:1.05rem}
+
+/* SELECTION - cor ao selecionar texto com o mouse
+   Onde: pseudo-elementos ::selection e ::-moz-selection
+   O que faz: altera a cor do fundo e do texto quando o usuário marca/seleciona texto
+   Observação: alguns navegadores podem acrescentar uma seleção azul por cima se houver regras do sistema, recarregue a página para ver mudanças.
+*/
 ::selection{background:#7c3aed;color:#ffffff}
 ::-moz-selection{background:#7c3aed;color:#ffffff}
-
 
 /* Responsive */
 @media (max-width:900px){
